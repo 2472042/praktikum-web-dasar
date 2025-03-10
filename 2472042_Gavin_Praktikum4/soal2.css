@@ -1,0 +1,60 @@
+body{
+    background-image: url("img/background-sertifikat.jpg");
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#one{
+    font-size: 35px;
+    color:black;
+    margin-bottom: 10px;
+}
+
+#two{
+    margin-top: 0px;
+    font-size: 60px;
+    color:#2d456e;
+    margin-bottom: 0px;
+}
+
+#three{
+    font-size: 30px;
+    color:#3f4650;
+}
+
+.container {
+    padding-top: 50px;
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.hr1 {
+    margin-bottom: 40px;
+    width: 1300px
+}
+
+.hr2 {
+    margin-bottom: 30px;
+    width: 450px
+}
+
+#four {
+    font-size: 55px;
+    color: #951f1d;
+    margin-bottom: 10px; /* Space below the name */
+}
+
+#five {
+    font-size: 25px;
+    color: black;
+    letter-spacing: 2px;
+    margin-top: 5px; /* Space above lecturer's title */
+}
+

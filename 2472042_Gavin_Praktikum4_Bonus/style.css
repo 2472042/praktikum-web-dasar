@@ -1,0 +1,131 @@
+body {
+    font-family: Verdana;
+    margin: 0; /* Add this line to remove default margin */
+    padding: 0; /* Add this line to remove default padding */
+}
+
+.navbar {
+    display: flex;
+    
+}
+
+.navbar a{
+    background-color: #282b30;
+    color : white;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.navbar a:hover{
+    background-color: #1E2124;
+    color : white;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.navbar a:active{
+    background-color: #7289DA;
+    color : white;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.html-section {
+    text-align: center;
+    height: 450px;
+    background-color: #D9EEE1;
+}
+
+.css-section {
+    text-align: center;
+    height: 450px;
+    background-color: #FFF4A3;
+}
+
+.javascript-section {
+    text-align: center;
+    height: 450px;
+    background-color: #F3ECEA;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+    line-height: 0.5;
+}
+
+td {
+    width: 600px;
+}
+
+.green-button {
+    background-color: #04AA6D;
+    color: white;
+    font-weight: bold;
+    font-size : 12px;;
+    border-radius: 50px;
+    width: 220px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.try-it-button {
+    background-color: #04AA6D;
+    color: white;
+    font-weight: bold;
+    font-size : 12px;;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.black-button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size : 12px;;
+    border-radius: 50px;
+    width: 220px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.pink-button {
+    background-color: #FFC0C7;
+    font-weight: bold;
+    font-size : 12px;;
+    border-radius: 50px;
+    width: 220px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.code-example-box{
+    background-color: #38444D;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin: 20px;
+    margin-top: 50px;
+    color : white;
+    text-align: left;
+    width: 450px
+}
+
+pre {
+    background-color: #15202B;
+    color : #539ddb;
+    padding: 10px;
+}

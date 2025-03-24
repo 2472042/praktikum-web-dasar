@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-color: #f4f4f4;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container{
+            display: flex;
+
+            justify-content: center;
+            
+        }
+
+        .login{
+            background-color: white;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            width: 60%;
+            height: 10%;
+            margin-top : 5%;
+
+            display: flex;
+            direction: row;
+
+            align-items: center;
+        }
+
+        #loginImage{
+            width: 40%;
+            height: 40%;
+            padding: 20px;
+        }
+
+        h1{
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 0;
+            padding: 0%;
+        }
+
+        p{
+            margin-top: 2%;
+            font-size: small;
+        }
+
+        form{
+            text-align: left;
+ 
+        }
+
+        button{
+            color : white;
+            background-color: #4b60d6;
+            border-radius: 6px;
+            border : 0 solid;
+            padding : 10px;
+            width : 100%;
+        }
+
+        button:hover{
+            color : white;
+            background-color: #2c3e94;
+            border-radius: 6px;
+            border : 0 solid;
+            padding : 10px;
+            width : 100%;
+        }
+
+        input{
+            border-radius: 6px;
+            border : 1px solid #2c3e94;
+            padding : 10px;
+            width : 95%;
+            margin-top : 5px;
+            margin-bottom : 5px;
+        }
+        
+
+        .form-options{
+            text-align: right;
+            display: flex;
+            flex-direction: row-reverse;
+            padding-top : 10px;
+            padding-bottom : 10px;
+            font-size : smaller;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        .login-content{
+            text-align: center;
+            color : #2c3e94;
+            width : 100%;
+            padding : 20px;
+        }
+
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color : #2c3e94
+        }
+
+        .social-login
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        @media only screen and (max-width: 768px) {
+            
+            .container{
+            display: flex;
+            justify-content: center;
+            
+            
+            }
+
+            .login{
+                background-color: white;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                width: 70%;
+                height: 100%;
+                margin-top : 5%;
+
+                padding: 20px;
+
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            #loginImage{
+                width: 40%;
+                height: 40%;
+                padding: 20px;
+            }
+
+            h1{
+                font-weight: bold;
+                font-size: 25px;
+                margin-bottom: 0;
+                padding: 0%;
+            }
+
+            p{
+                margin-top: 2%;
+                font-size: small;
+            }
+
+            form{
+                text-align: left;
+    
+            }
+
+            button{
+                color : white;
+                background-color: #4b60d6;
+                border-radius: 6px;
+                border : 0 solid;
+                padding : 10px;
+                width : 100%;
+            }
+
+            button:hover{
+                color : white;
+                background-color: #2c3e94;
+                border-radius: 6px;
+                border : 0 solid;
+                padding : 10px;
+                width : 100%;
+            }
+
+
+            input{
+                border-radius: 6px;
+                border : 1px solid #2c3e94;
+                padding : 10px;
+                width : 95%;
+                margin-top : 5px;
+                margin-bottom : 5px;
+            }
+            
+
+            .form-options{
+                text-align: right;
+                display: flex;
+                flex-direction: row-reverse;
+                padding-top : 10px;
+                padding-bottom : 10px;
+                font-size : smaller;
+            }
+
+            label{
+                font-weight: bold;
+            }
+
+            .login-content{
+                text-align: center;
+                color : #2c3e94;
+                width : 100%;
+                padding : 20px;
+            }
+
+            a{
+                text-decoration: none;
+                font-weight: bold;
+                color : #2c3e94
+            }
+
+            .social-login
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <img src="img/login.png" alt="Login Illustration" id="loginImage">
+            <div class="login-content">
+                <h1>Welcome Back!</h1>
+                <p>Log in to your account to continue exploring our services</p>
+                <form action="#">
+                    <label>Email</label><br>
+                    <input placeholder="e.g. johndoe@gmail.com"><br>
+                    <label>Password</label><br>
+                    <input placeholder="Enter your password"><br>
+                    <div class="form-options">
+                        <a href="">Forgot password?</a>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Or log in with</p>
+                <div class="social-login">
+                    <a href="#"><img src="img/google.png"></a>
+                    <a href="#"><img src="img/facebook.png"></a>
+                    <a href="#"><img src="img/twitter.png"></a>
+                </div>
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <style>
+        body{
+            margin : 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            display: grid;
+
+            grid-template-areas:
+            "s h h h"
+            "s c c c"
+            "s c c c"; 
+
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 32vh 1fr;
+
+            height: 100vh; /* Ensures it fills the viewport height */
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar{
+            grid-area: s;
+            background-color: rgb(31, 31, 31);
+            color : white;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .header{
+            grid-area: h;
+            background-color: #007afe;
+            color : white;
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-between;
+
+            font-size: 20px;
+        }
+
+        .header-left{
+            padding-left: 20px;
+        }
+
+        .header-right{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            padding-right: 20px;
+
+        }
+
+        .header-right img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .content{
+            grid-area: c;
+            background-color: #f4f4f4;
+        }
+
+        .content h1{
+            font-size: 25px;
+            padding-left: 20px;
+            margin-bottom : 0;
+        }
+
+        .statistics {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .statistics-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px rgb(173, 173, 173); 
+            padding: 10px;
+            padding-left: 20px;
+            flex: 1 1 calc(25% - 40px); /* Ensures even sizing and spacing */
+            box-sizing: border-box;
+            min-width: 300px;
+            max-width: 400px;
+        }
+    
+
+        @media only screen and (max-width: 768px) 
+        {
+            .statistics {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .statistics-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 3px 3px 5px rgb(173, 173, 173); 
+                padding: 10px;
+                padding-left: 20px;
+                flex: 1 1 calc(25% - 40px); /* Ensures even sizing and spacing */
+                box-sizing: border-box;
+                min-width: 300px;
+                max-width: 700px;
+            }
+
+            .container {
+                display: grid;
+                grid-template-areas:
+                    "h"
+                    "c";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+
+                height: 100vh; /* Ensures it fills the viewport height on smaller screens */
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }    
+        }
+
+        .statistics-card p{
+            font-weight: bold;
+            font-size: 20px;
+            color: #007afe;
+        }
+
+        .sidebar h1{
+            font-size: 25px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sidebar-top{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .sidebar-top a{
+            padding: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-decoration: none;
+            color :white;
+        }
+
+        #selected-sidebar {
+            background-color: rgb(72, 72, 72);
+            border-radius: 6px;
+        }
+
+        .sidebar-bottom {
+            padding: 25px;
+        }
+
+        button{
+            color : white;
+            background-color: #df1c1c;
+            border-radius: 6px;
+            border : 0 solid;
+            padding : 13px;
+            width : 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-top">
+                <h1>Information System</h1>
+                <a href="#">Dashboard</a>
+                <a href="#">Laporan</a>
+                <a href="#" id="selected-sidebar">Pengguna</a>
+                <a href="#">Pengaturan</a>
+            </div>
+            <div class="sidebar-bottom">
+                <button type="submit">Logout</button>
+            </div>
+        </div>
+        <div class="header">
+            <div class="header-left">
+                <h4>Dashboard</h4>
+            </div>
+
+            <div class="header-right">
+                <p>Admin </p>
+                <img src="img/profile.png">
+            </div>
+        </div>
+        <div class="content">   
+            <h1>Ringkasan</h1>
+            <div class="statistics">
+                <div class="statistics-card">
+                    <h2>Total Pengguna</h2>
+                    <p>1,257</p>
+                </div>
+                <div class="statistics-card">
+                    <h2>Penjualan Bulan ini</h2>
+                    <p>Rp 150,151,152</p>
+                </div>
+                <div class="statistics-card">
+                    <h2>Tiket Support</h2>
+                    <p>24</p>
+                </div>
+                <div class="statistics-card">
+                    <h2>Feedback</h2>
+                    <p>320</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

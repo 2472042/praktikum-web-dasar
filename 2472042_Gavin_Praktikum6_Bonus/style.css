@@ -1,0 +1,287 @@
+body
+{
+    margin : 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+    display: grid;
+    grid-template-areas:
+    "h h h"
+    "n c1 c2";
+    grid-template-columns: 1fr 7fr 12fr;
+    grid-template-rows: 1fr 12fr;
+    height: 100vh;
+}
+
+img{
+    height: auto;
+    width: 30px;
+}
+
+.header
+{
+    grid-area: h;
+    background-color: #202020;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-icon
+{
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    align-items: center;
+}
+
+.nav
+{
+    grid-area: n;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.nav-icon
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chatlist
+{
+    grid-area: c1;
+    background-color: #2c2c2c;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.chatlist-header
+{
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+.chatlist-user
+{
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    
+    border-radius: 10px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.specific
+{
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    
+    border-radius: 10px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.specific p
+{
+    margin-top: 5px;
+}
+
+.specific:hover
+{
+    background-color: #6c6c6c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+
+    border-radius: 10px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.chatlist-user p
+{
+    margin-top: 5px;
+}
+
+
+.chatlist-user-name
+{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.chatlist-user-name p
+{
+    margin-top: 1px;
+    margin-bottom: 0;
+}
+
+
+.chatlist-user-profile
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chatbox
+{
+    grid-area: c2;
+    background-color: #2c2c2c;
+}
+
+.chatbox-header
+{
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap : 10px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.chatbox-messages
+{
+    background-image: url("img/wa_doodle.png");
+    height: 72vh;
+    overflow-y: auto;
+}
+
+.chatbox-messages p
+{
+    margin: 10px;
+}
+
+.chatbox-message-left
+{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.chatbox-message-right
+{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
+}
+
+.message-you
+{
+    background-color: #005b4a;
+    border-radius: 10px;
+
+}
+
+.message-user
+{
+    background-color: #353535;
+    border-radius: 10px;
+
+}
+
+.message-box
+{
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap : 20px;
+    padding-left : 10px;
+}
+
+#emoji
+{
+    width: 32px;
+    height: 30px;
+}
+
+#profile_picture-nav
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+#profile_picture
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#profile_picture-messages
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+#settings
+{
+    width: 30px;
+    height: 25px;
+}
+#top-left-buttons
+{
+    width: 35px;
+    height: 105px;
+}
+#top-right-buttons
+{
+    width: 120px;
+    height: 35px;
+}
+#wa-icon
+{
+    width: 30px;
+    height: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+::-webkit-scrollbar-track {
+background: #0e0e0e; 
+}
+
+::-webkit-scrollbar-thumb {
+background: #717171; 
+}

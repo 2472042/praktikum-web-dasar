@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <style>
+        body
+        {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .container
+        {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #e4f2fd;
+            align-items: center;
+        }
+        .box
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            width: 470px;
+            height: auto;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+        }
+
+        h2
+        {
+            margin-bottom: 5px;
+        }
+
+        #instruction
+        {
+            font-size: small;
+            color: gray;
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+        }
+
+        #finalScore
+        {
+            color: rgb(52, 52, 52);
+            padding: 3px;
+            margin: 0;
+            display: none;
+        }
+
+        #finishDate
+        {
+            color: rgb(52, 52, 52);
+            padding: 3px;
+            margin: 0;
+            display: none;
+        }
+
+        #generateButton
+        {
+            padding: 8px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0px solid black;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script src="./script.js"></script>
+    <div class="container">
+        <div class="box">
+            <h2>Welcome to the Math Quiz</h2>
+            <p id="instruction">Click to the button bellow to start solving random math problems. Type "exit" or press cancel to stop.</p>
+            <button onclick="startQuiz()" id="generateButton">
+                Start Practicing
+            </button>
+            <p id="finalScore"></p>
+            <p id="finishDate"></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>My Square</title>
+    <style>
+        body
+        {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display : flex;
+            justify-content: center
+        }
+
+        #persegi
+        {
+            color : white;
+
+            display : flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mySquare
+        {
+            text-align: left;            
+        }
+
+        p
+        {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mySquare">
+        <h3>Persegi Buatanmu</h3>
+        <div id="persegi">test</div>
+        <p>&copy; 2472042 - Gavin Malik Setiawan</p>
+    </div>
+
+
+    <script>
+        let BorderPersegi = prompt("Border persegi (misal 1)");
+        let TinggiPersegi = prompt("Tinggi persegi (px)");
+        let LebarPersegi = prompt("Lebar persegi (px)");
+        let WarnaPersegi = prompt("Warna persegi (misal: red, blue, #00ff00))");
+        let isiPersegi = prompt("isi persegi (misal:Hello World)")
+
+        let divPersegi = document.getElementById("persegi");
+
+        divPersegi.style.backgroundColor = WarnaPersegi;
+        divPersegi.style.border = BorderPersegi + "px solid black";
+        divPersegi.style.height = TinggiPersegi + "px";
+        divPersegi.style.width = LebarPersegi + "px";
+        divPersegi.innerHTML = isiPersegi;
+    </script>
+</body>
+</html>

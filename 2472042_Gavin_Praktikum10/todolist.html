@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body
+        {
+            margin: 0;
+            font-family: Verdana, Tahoma, sans-serif;
+            background-color:#F5F5F5 ;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container
+        {
+            background-color: #4A90E2 ;
+            border-radius: 5px;
+            width: 30%;
+            padding: 10px;
+            padding-top: 0px;
+        }
+
+        .topStuff
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 20px;
+
+        }
+
+        h3
+        {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        #button1
+        {
+            padding: 0;
+            background-color: #50C878 ;
+            color : white;
+            border: 0px solid black;
+            height: 35px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #credit
+        {
+            padding-left: 20px;
+            font-size: small;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function AddList() {
+            let item = prompt("Masukan hal yang harus dilakukan");
+
+            if (item == null) return;
+
+            let ul = document.getElementById("taskList");
+
+            let li = document.createElement("li");
+            li.innerHTML = item;
+
+            li.addEventListener("click", function() {
+                let answer = confirm("Sudah mengerjakan tugas ini?");
+                if (answer) {
+                    li.style.textDecoration = "line-through"; 
+                }
+            });
+
+            ul.appendChild(li);
+        }
+    </script>
+    <div class="container">
+        <div class="topStuff">
+            <h3>My To-Do-List</h3>
+            <button id="button1" onclick="AddList()">Tambah +</button>
+        </div>
+        <ul id="taskList">
+        </ul>
+        <p id="credit">&copy;2472042 - Gavin Malik Setiawan</p>
+    </div>
+</body>
+</html>

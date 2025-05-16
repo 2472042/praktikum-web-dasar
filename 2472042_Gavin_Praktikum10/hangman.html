@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <style>
+        body
+        {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;   
+
+            background-color: lightblue;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top : 3.5%;
+        }
+
+        #hangmanPic
+        {
+            width: 70%;
+        }
+        .leftSide
+        {
+            text-align: center;
+        }
+        .rightSide
+        {
+            text-align: center;
+            padding-top: 10%;
+        }
+
+        #letterText
+        {
+            letter-spacing: 20px;
+        }
+        #clueText
+        {
+            text-align: center;
+        }
+        #letterField
+        {
+            width: 5.5%;
+            height: 7%;
+        }
+        #checkButton
+        {
+            width: 8%;
+            height: 8%;
+            text-align: center;
+            padding: 0;
+        }
+
+        #announceText
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let answers = ["PYTHON", "JAVASCRIPT", "TAILWIND", "REACT", "LARAVEL"];
+        let clues = [
+        "A versatile programming language named after a snake, loved for its simplicity.",
+        "The language that brings interactivity to websites, often abbreviated as JS.",
+        "A utility-first CSS framework for rapidly building custom designs.",
+        "A JavaScript library for building dynamic user interfaces, created by Facebook.",
+        "A PHP framework known for elegant syntax and robust web development tools.",
+        ];
+
+        var answer = ""; // untuk jawaban yang akan digenerate
+        var answer_ = ""; // untuk jawaban dari player (berisi “_” sebanyak answer.length)
+        var lives = 10;
+
+        function generate()
+        {
+            let index = Math.floor(Math.random() * (answers.length-1));
+            answer = answers[index];
+            clueText.innerHTML = clues[index];
+
+            for (let i = 0; i < answer.length; i++)
+            {   
+                answer_ += "_";
+            }
+
+            let letterText = document.getElementById("letterText");
+
+            letterText.innerHTML = answer_;
+
+            let livesText = document.getElementById("livesText");
+
+            livesText.innerHTML = "Lives : " + lives;
+        }
+
+        function checkAnswer() 
+        {
+            if (lives <= 0) return;
+
+            let letterText = document.getElementById("letterText");
+
+            let guessLetter = document.getElementById("letterField").value.toUpperCase();
+
+            const answerArr = answer.split("");
+            
+            let guessRight = false;
+
+            answerArr.forEach((letter)=>
+            {
+                if (letter  == guessLetter)
+                {
+                    guessRight = true;
+                }
+            })
+
+            if (guessRight)
+            {
+                let answer_Arr = answer_.split("");
+
+                for (let i = 0; i < answer.length; i++)
+                {   
+                    if (answer[i] == guessLetter)
+                    {
+                        answer_Arr[i] = guessLetter;
+                    }
+                }
+
+                answer_ = answer_Arr.join("");
+
+                letterText.innerHTML = answer_;                
+            }
+            else
+            {
+                let livesText = document.getElementById("livesText");
+                lives -= 1;
+                livesText.innerHTML = "Lives : " + lives;
+            }
+
+            checkWin();
+
+        }
+
+        function checkWin()
+        {
+            if (lives <= 0)
+            {
+                let announceText = document.getElementById("announceText");
+                announceText.style.display = 'block';
+                announceText.style.color = 'red';
+                announceText.innerHTML = 'Kamu kalah!'
+
+                document.getElementById('hangmanPic').src = 'img/hangmanLose.png';
+            }
+
+            if (answer == answer_)
+            {
+                let announceText = document.getElementById("announceText");
+                announceText.style.display = 'block';
+                announceText.style.color = 'green';
+                announceText.innerHTML = 'Kamu menang!'
+            }
+            
+        }
+
+        window.onload = (event) => {
+            generate();
+        };
+
+    </script>
+    <div class="leftSide">
+        <img id="hangmanPic" src="img/hangman.png">
+        <p id="livesText">Lives : 0</p>
+    </div>
+    <div class="rightSide">
+        <h1 id="letterText">______</h1>
+        <p id="clueText">A versatile programming language named after a snake, loved for its simplicity.</p>
+        <input id="letterField">
+        <button id="checkButton" onclick="checkAnswer()">Check</button>
+        <p id="announceText">Kamu menang!</p>
+    </div>
+</body>
+</html>

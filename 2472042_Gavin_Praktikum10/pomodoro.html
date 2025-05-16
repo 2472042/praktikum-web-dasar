@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        body
+        {
+            margin: 0;
+            font-family: Poppins;   
+
+            background-color: #894682;
+            /*4988BB*/
+
+            color: white;
+        }
+        h3
+        {
+            padding-left: 25%;
+        }
+        .container
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;   
+        }
+        .box
+        {
+            border: white 2px solid;
+            border-radius: 5px;
+            width: 20%;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .upperStuff
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            font-size: small;
+        }
+        #timer
+        {
+            font-size: 50px;
+            padding: 0;
+            margin: 0;
+        }
+        #buttonTimer
+        {
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-top: 15px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        mode = "Pomodoro"
+        timerStarted = false
+
+        function switchMode(modeNumber)
+        {
+            let timer = document.getElementById('timer');
+            let textTimer = document.getElementById('textTimer');
+            let body = document.body;
+            resetTimer();
+            if (modeNumber == 0)
+            {
+                mode = "Pomodoro";
+                body.style.backgroundColor = '#894682';
+                timer.innerHTML = '25:00';
+                textTimer.innerHTML = 'Focus pocus!';
+            }
+            else
+            {
+                mode = "Short Break";
+                body.style.backgroundColor = '#4988BB';
+                timer.innerHTML = '5:00'
+                textTimer.innerHTML = 'Rest time!!'
+            }
+        }
+
+        function startTimer()
+        {
+            let buttonTimer = document.getElementById('buttonTimer');
+
+            if (timerStarted)
+            {
+                resetTimer();
+            }
+            else
+            {
+                buttonTimer.innerHTML = "RESET";
+                console.log(mode);
+
+                timerStarted = true;
+
+                let timerText = document.getElementById('timer');
+
+                let duration;
+
+                if (mode == "Pomodoro")
+                {
+                    duration = 25 * 60;
+                }
+                else
+                {
+                    duration = 5 * 60;
+                }
+
+                var timer = duration, minutes, seconds;
+                let x = setInterval(function () 
+                {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    timerText.innerHTML = minutes + ":" + seconds;
+
+                    if (--timer < 0) {
+                        timer = duration;
+                        alert("Time's up")
+                        clearInterval(x) 
+                        resetTimer();
+                        if (mode == 'Pomodoro')
+                        {
+                            timerText.innerHTML = '25:00';
+                        }
+                        else
+                        {
+                            timerText.innerHTML = '5:00'
+                        }
+
+                    }
+                    if (timerStarted == false)
+                    {
+                        clearInterval(x) ;
+
+                        if (mode == 'Pomodoro')
+                        {
+                            timerText.innerHTML = '25:00';
+                        }
+                        else
+                        {
+                            timerText.innerHTML = '5:00'
+                        }                        
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer()
+        {
+            if (timerStarted){
+                timerStarted = false               
+
+                let buttonTimer = document.getElementById('buttonTimer');
+                buttonTimer.innerHTML = "START";   
+            }
+        }
+
+    </script>
+    <h3>Pomodoro</h3>
+
+    <div class="container">
+        <div class="box">
+            <div class="upperStuff">
+                <p onclick="switchMode(0)">Pomodoro</p>
+                <p onclick="switchMode(1)">Short Break</p>
+            </div>
+            <p id="timer">25:00</p>
+            <button id="buttonTimer" onclick="startTimer()">START</button>
+        </div>
+        <p id="textTimer">Focus pocus!</p>
+    </div>
+</body>
+</html>

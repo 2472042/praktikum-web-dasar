@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Bug</title>
+    <style>
+        body
+        {
+            margin: 0;
+        }
+
+        #gameScene
+        {
+            display: block;
+        }
+
+        #gameoverScene
+        {
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            background-color: black;
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #elementFinalScore
+        {
+            color : white;
+            font-size: xx-large;
+        }
+
+        .bug
+        {
+            position : fixed;
+            /* top: 80%;
+            left: 95%; */
+            width: 20px;
+            height: auto;
+        }
+        .scoreBoard
+        {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+    
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            let timeLeft = $("#elementTimeLeft");
+            let currentTime = 5;
+
+            let score = $("#elementScore");
+            let currentScore = 0;
+
+            let timer = setInterval(function () 
+            {
+            
+                currentTime -= 1;
+                $(timeLeft).text("Time Left : " + currentTime + "s");
+
+                if (currentTime == 0)
+                {
+                    clearInterval(timer);   
+                    clearInterval(spawn);  
+                    
+                    let gameScene = $("gameScene");
+                    let gameoverScene = $("gameoverScene");
+                    let finalScore = $("elementFinalScore");
+
+                    $(finalScore).text("Final Score : " + currentScore); 
+                    $(gameScene).css("display", "none");
+                    $(gameoverScene).css("display", "flex");
+                }
+            }, 1000);
+
+            let spawn = setInterval(function () {
+                let bug = $("<img class='bug' src='img/bug.jpg'>")
+
+                let topRandom = Math.floor(Math.random() * 80);
+                let leftRandom = Math.floor(Math.random() * 100);
+
+                $(bug).css({
+                    top: topRandom + "%",
+                    left: leftRandom + "%"
+                });
+
+                $("#container").append($(bug));
+
+                $(bug).on("click", function () {
+                    currentScore += 1;
+                    $(score).text("Score : " + currentScore);
+                    $(bug).hide();
+                });
+            }, 500);   
+                    
+        });
+        
+    </script>
+</head>
+<body>
+    <div id="gameScene">
+        <div id="container">
+            <!-- <img class="bug" src="img/bug.jpg"> -->
+        </div>
+        <div class="scoreBoard">
+            <p id="elementTimeLeft">Time Left : 5s</p>
+            <p id="elementScore">Score : 0</p>
+        </div>
+    </div>
+
+    <div id="gameoverScene">
+        <p id="elementFinalScore">Final Score : </p>
+    </div>
+</body>
+</html>

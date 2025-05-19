@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment</title>
+    <style>
+        body
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 12%;
+        }
+        .container
+        {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .num
+        {
+            border: 10px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: white;
+            font-size: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            function changeColor(element, color)
+            {
+                let currentNumber = parseInt($(element).text());
+
+                if (currentNumber === 0) {
+                    $(element).css({
+                        "background-color": "white",
+                        "color": "black"
+                    });
+                } 
+                else {
+                    $(element).css({
+                        "background-color": color,
+                        "color": "white"
+                    });
+                }
+                
+            }
+            $(".num").each(function () {
+                let numBox = $(this);
+
+                $(numBox).on("mousedown", function (e) {
+                    let currentNum = parseInt($(numBox).text());
+
+                    if (e.button === 0) {
+                        currentNum += 1;
+                        $(numBox).text(currentNum);
+                        changeColor(numBox, "green");
+                    } else if (e.button === 2) {
+                        currentNum -= 1;
+                        $(numBox).text(currentNum);
+                        changeColor(numBox, "red");
+                    }
+                });
+
+                $(numBox).on("contextmenu", function (e) {
+                    return false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="num">0</div>
+        <div class="num">0</div>
+        <div class="num">0</div>
+        <div class="num">0</div>
+        <div class="num">0</div>
+    </div>
+</body>
+</html>

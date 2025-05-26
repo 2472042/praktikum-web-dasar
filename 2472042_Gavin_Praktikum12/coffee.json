@@ -1,0 +1,32 @@
+[
+    {
+    "name": "Espresso",
+    "price": "18.000",
+    "description": "Kopi hitam pekat dengan rasa yang stron dan rich.",
+    "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA1s6y7zOF2_xARrIkmFwlpnt_Ph0w4d4kCw&s"
+    },
+    {
+    "name": "Cappuccino",
+    "price": "25.000",
+    "description": "Perpaduan espresso, susu panas, dan foam yang lembut.",
+    "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3JCS9lrOqbrfD1HQr1fwS40OYMIy-XOOF7w&s"
+    },
+    {
+    "name": "Latte",
+    "price": "24.000",
+    "description": "Espresso dengan banyak susu, rasa yang lebih ringan.",
+    "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3fGm6VkKhLBLhqO53AGZZIMYiFsACD95AmA&s"
+    },
+    {
+    "name": "Cold Brew",
+    "price": "28.000",
+    "description": "Kopi diseduh dingin selama 12 jam, rasanya halus dan ringan.",
+    "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CdLInNSiJ-IqIVvZ33d1thFZSb02ywpPew&s"
+    },
+    {
+    "name": "Americano",
+    "price": "20.000",
+    "description": "Espresso dicampur air panas, cita rasa klasik.",
+    "img" :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbQCX3u4g1e_hmgaOAfQHT9RunewHHqIQpg&s"
+    }
+]

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Menu</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body
+        {
+            margin: 0;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f2eb ;
+        }
+        h2{
+            color: #3e2c23 ;
+        }
+
+        #content {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .cofeeeCard
+        {
+            background-color: #fffaf3;
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            height: 320px;
+            text-align: left;
+
+        }
+
+        .cofeeeCard img
+        {
+            width: 100%;
+            height: 60%;
+            border-radius: 10px;
+        }
+
+        .cofeeeCard p
+        {
+            margin-top: 0px;
+        }
+        
+        h3
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Coffeee Shop Menu</h2>
+    <div id="content">
+
+    </div>
+    <p>&copy; 2472042 - Gavin</p>
+
+    <script>
+        $.getJSON("./coffee.json", function(data) {
+            console.log(data);
+            data.forEach(function(coffee) {
+                var coffeeCard = `
+                    <div class="cofeeeCard">
+                        <img src="${coffee.img}">
+                        <h3>${coffee.name}</h3>
+                        <p>${coffee.description} <br> Rp. ${coffee.price}</p>
+                    </div>
+                `;
+                $("#content").append(coffeeCard);
+            });
+        });
+    </script>
+</body>
+</html>

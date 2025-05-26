@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema 25</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body
+        {
+            margin: 0;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f2eb ;
+
+            background: linear-gradient(135deg, #f4f4f4 60%, #e0e7ff 100%);
+
+            min-height: 100vh;
+        }
+        header
+        {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('img/cinema.jpg');
+            height : 250px;
+            display : flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        header h2{
+            padding-top: 50px;
+            margin: 0;
+            color: white ;
+        }
+
+        header p
+        {
+            color:  #ffe066;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+
+        .movieCard
+        {
+            display: none;
+            background-color: #fffaf3;
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            height: 400px;
+            text-align: left;
+            margin-top: 50px;
+
+        }
+
+        .movieCard img
+        {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .movieCard p
+        {
+            margin-top: 0px;
+            color: #1b9c85;
+            font-weight: bold;
+            font-size: small;
+        }
+        
+        h3
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #2d3142;
+        }
+
+        footer
+        {
+
+        }
+        footer p
+        {
+            margin: 0;
+            padding: 10px;
+            background-color: #0e1637;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        #seeMoviesBtn {
+            padding: 10px 20px;
+            background-color: #1b9c85;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Cinema 25</h1>
+        <p>Now Showing</p>
+    </header>
+    <main>
+        <button id="seeMoviesBtn">See Movies</button>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Cinema 25 - 2472042 Gavin</p>
+    </footer>
+
+    <script>
+        let seeMoviesButton = $('#seeMoviesBtn');
+
+        $.getJSON("./Datamovie.json", function(data) {
+            console.log(data);
+            data.forEach(function(movie) {
+                let movieCard = `
+                    <div class="movieCard">
+                        <img src="${movie.img}">
+                        <h3>${movie.title}</h3>
+                        <p>Genre: ${movie.genre}</p>
+                    </div>
+                `;
+
+                movieCardElement = $("main").append(movieCard);
+
+                movieCardElement.css('display', 'flex');
+            });
+        });
+
+        $(document).ready(function() {
+            seeMoviesButton.click(function() {
+                seeMoviesButton.css('display', 'none');
+
+                let movieCard = $('.movieCard');
+
+                movieCard.each(function(index) {   
+
+                    $(this).fadeIn(0);
+
+                });
+            });
+        });
+    </script>
+</body>
+</html>

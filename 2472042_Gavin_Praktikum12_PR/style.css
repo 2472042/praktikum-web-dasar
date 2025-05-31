@@ -1,0 +1,142 @@
+body
+{
+    font-family: Arial, sans-serif;
+    background-color: #e7eaee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input
+{
+    padding: 5px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+textarea
+{
+    padding: 5px;
+    padding-bottom: 20px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    height: 50%;
+    resize: vertical;
+}
+
+button
+{
+    padding: 10px;
+    background-color: #24ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container
+{
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    padding-bottom: 10px;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.HorizontalInput
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.HorizontalInput input
+{
+    width: 30%;
+}
+
+#addButton
+{
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+}
+
+#updateButton
+{
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    display: none;
+}
+
+.editButton
+{
+    background-color: #f39c12;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    margin-left: 0;
+}
+
+.deleteButton
+{
+    background-color: #e74c3c;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    margin-left: 3px;
+}
+
+table
+{
+    width: 53%;
+    background-color: white;
+    margin-top: 10px;;
+    border-radius: 10px 10px 5px 5px;
+    border-collapse: collapse;
+    font-size: small;
+}
+
+th
+{
+    border-collapse: collapse;
+    background-color: #2980b9;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    padding-left: 15px;    
+}
+td
+{   
+    text-align: left;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;  
+}
+
+#leftTable
+{
+    border-radius: 10px 0 0 0;
+    border-collapse: collapse;
+}
+#rightTable
+{
+    border-radius: 0 10px 0 0;
+    border-collapse: collapse;
+}
+
+#no-data-row td
+{
+    text-align: center;
+    padding: 10px;
+    color: #7f8c8d;
+}
